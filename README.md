@@ -4,7 +4,6 @@
 ### Username: `admin@gmail.com`
 ### Password: `123456`
 
-### For Admin
 [for admin register .](https://product-enquiry.netlify.app/admin-register)
 
 # Getting Started with Create React App
