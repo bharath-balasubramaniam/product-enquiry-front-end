@@ -34,6 +34,7 @@ function App() {
         <Route exact path="/product/:id">
           {!user ? <Redirect to="/" /> : <ProductPage />}
         </Route>
+        <Route path="*">{!user ? <Redirect to="/" /> : <HomePage />}</Route>
       </Switch>
     </Router>
   );
