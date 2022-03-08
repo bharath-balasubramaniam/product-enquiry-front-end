@@ -80,7 +80,7 @@ const useStyles = makeStyles({
     maxHeight: 440,
   },
 });
-export default function ProductsTable() {
+export default function ProductsTable({ products }) {
   const classes = useStyles();
   const history = useHistory();
   const { user } = UserState();
