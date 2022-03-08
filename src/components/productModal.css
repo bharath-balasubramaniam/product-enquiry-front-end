@@ -1,0 +1,48 @@
+.backdrop {
+  position: fixed;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.btn {
+  font: inherit;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #7ce924;
+  color: white;
+  border: 1px solid #a4f177;
+  margin: 0rem;
+  margin-top: 1rem;
+}
+.btn--alt {
+  background-color: transparent;
+  color: #db7e04;
+  margin-top: 1rem;
+}
+.info-title {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+.info {
+  font-weight: 600;
+  display: flex;
+  margin-left: 5px;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  color: rgb(110, 109, 109);
+}
+.btn--alt:hover {
+  background-color: #f8dae9;
+}
+.btn:hover {
+  background-color: #17d677;
+  background-color: #1bdba1;
+}

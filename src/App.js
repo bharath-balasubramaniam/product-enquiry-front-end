@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+// import { useHistory } from "react-router-dom";
+import { UserState } from "./context/UserProvider";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ProductsPage from "./pages/ProductsPage";
+import ProductPage from "./pages/ProductPage";
 function App() {
+  const { user } = UserState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          {user ? <Redirect to="/products" /> : <HomePage />}
+          <HomePage />
+        </Route>
+        <Route exact path="/login">
+          {user ? <Redirect to="/products" /> : <LoginPage />}
+        </Route>
+        <Route exact path="/admin-register">
+          {user ? <Redirect to="/products" /> : <RegisterPage />}
+        </Route>
+        <Route exact path="/products">
+          {!user ? <Redirect to="/" /> : <ProductsPage />}
+        </Route>
+        <Route exact path="/product/:id">
+          {!user ? <Redirect to="/" /> : <ProductPage />}
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
