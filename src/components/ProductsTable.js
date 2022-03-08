@@ -84,29 +84,29 @@ export default function ProductsTable() {
   const classes = useStyles();
   const history = useHistory();
   const { user } = UserState();
-  const [products, setProducts] = useState();
-  useEffect(() => {
-    fetchProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [history]);
-  const fetchProducts = async () => {
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const { data } = await axios.get(
-        `https://product-enquiry.herokuapp.com/product-enquiry/`,
-        config
-      );
-      setProducts(data);
-    } catch (error) {
-      if (error) console.log(error.message);
-      return;
-    }
-  };
+//   const [products, setProducts] = useState();
+//   useEffect(() => {
+//     fetchProducts();
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [history]);
+//   const fetchProducts = async () => {
+//     try {
+//       const config = {
+//         headers: {
+//           "Content-type": "application/json",
+//           Authorization: `Bearer ${user.token}`,
+//         },
+//       };
+//       const { data } = await axios.get(
+//         `https://product-enquiry.herokuapp.com/product-enquiry/`,
+//         config
+//       );
+//       setProducts(data);
+//     } catch (error) {
+//       if (error) console.log(error.message);
+//       return;
+//     }
+//   };
   const handleDelete = async (id) => {
     try {
       const config = {
